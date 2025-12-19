@@ -38,10 +38,10 @@ if (empty($_SESSION)){
    </header>
 <section class="both-bar">
 <nav class="side-bar">
-    <a class="links" href="#">Dashboard</a>
-    <a class="links"  href="">Customers</a>
-    <a class="links"  href="">Accounts</a>
-    <a class="links"  href="">Total Transaction for the day</a>
+    <a class="links" href="dashboard.php">Dashboard</a>
+    <a class="links"  href="list_clients.php">Customers</a>
+    <a class="links"  href="list_accounts.php">Accounts</a>
+    <a class="links"  href="list_transactions.php">Today's Transactions</a>
     <button class="logout-btn">Logout</button>
 </nav>
 <div  class="bg">
