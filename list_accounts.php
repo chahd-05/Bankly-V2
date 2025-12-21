@@ -21,7 +21,7 @@ if (empty($_SESSION)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="dashs.css">
+    <link rel="stylesheet" href="dash.css">
 </head>
 <body>
  
@@ -35,12 +35,13 @@ if (empty($_SESSION)){
     <a class="links"  href="list_clients.php">Customers</a>
     <a class="links"  href="list_accounts.php">Accounts</a>
     <a class="links"  href="list_transactions.php">Today's Transactions</a>
-    <button class="logout-btn">Logout</button>
+    <a class="logout-btn" href="logout.php">Logout</a>
 </nav>
 <div  class="bg">
+    <a href="add_account.php">Add Account</a>
     <?php 
         foreach($account_amount as $accAm){
-            echo  "<p class = 'account'>" . $accAm['account_id'] . " - ". $accAm['account_number'] . " - ". $accAm['balance'] . " - ". $accAm['account_type'] ." - ". $accAm['full_name'] . "</p>";
+            echo  "<p class = 'account'>" . $accAm['account_id'] . " - ". $accAm['account_number'] . " - ". $accAm['balance'] . " - ". $accAm['account_type'] ." - ". $accAm['full_name'] .  "<a href='edit_account.php?id=" . $accAm['account_id'] . "'>Edit</a>" . "<a href='delete_account.php?id=" . $accAm['account_id'] . "'>Delete</a>" . "</p>";
         }
     ?>
 </div>

@@ -62,7 +62,7 @@ if (empty($_SESSION)){
     <a class="links"  href="list_clients.php">Customers</a>
     <a class="links"  href="list_accounts.php">Accounts</a>
     <a class="links"  href="list_transactions.php">Today's Transactions</a>
-    <button class="logout-btn">Logout</button>
+    <a class="logout-btn" href="logout.php">Logout</a>
 </nav>
 <div  class="bg">
 <div class="client">

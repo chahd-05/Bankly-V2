@@ -40,42 +40,44 @@ if (empty($_SESSION)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
  
    <header>
-    <h1>Dashboard</h1>
-    <h2>Bienvenu Admin !</h2>
+    <a class="links" href="list_accounts.php"> <-Back </a>
+    <h1>Edit Client</h1>
+    <a class="logout-btn" href="logout.php">Logout</a>
    </header>
 <section class="both-bar">
 <nav class="side-bar">
-    <a class="links" href="dashboard.php">Dashboard</a>
-    <a class="links"  href="list_clients.php">Customer</a>
-    <a class="links"  href="list_accounts.php">Accounts</a>
-    <a class="links"  href="list_transactions.php">Today's Transactions</a>
-    <button class="logout-btn">Logout</button>
+    
 </nav>
 <div  class="bg">
      <form action="edit_account.php?id= <?php echo $customer_id ?>" method="post">
-    <label>Customer_id</label>
+    
+    <div class="in"><label>Customer_id</label>
     <select name="Customer_id">
         <?php 
             while($id = mysqli_fetch_assoc($data)){
                 echo "<option value='" . $id['customer_id'] . "'>" . $id['full_name'] . "</option>";
             }
         ?>
-    </select>
-    <label>Account_number</label>
-    <input type="text" name="Account_number" value="<?php echo $inf['account_number']; ?>">
-    <label>Balance</label>
-    <input type="text" name="Balance" value="<?php echo $inf['balance']; ?>">
-    <label>Account_type</label>
+    </select></div>
+    <div class="in"><label>Account_number</label>
+    <input type="text" name="Account_number" value="<?php echo $inf['account_number']; ?>"></div>
+    <div class="in"><label>Balance</label>
+    <input type="text" name="Balance" value="<?php echo $inf['balance']; ?>"></div>
+    <div class="in"><label>Account_type</label>
    <select name="Account_type">
     <option value="business">business</option>
     <option value="savings">savings</option>
     <option value="checking">checking</option>
-</select>
+</select></div>
+    
+    
+    
+    
    
     <input type="submit" value="submit" name="Submit">
 </form>

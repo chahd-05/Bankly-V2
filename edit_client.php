@@ -9,7 +9,6 @@ if (empty($_SESSION)){
 
 <?php 
     $customer_id = $_GET['id'];
-    echo $customer_id;
     if(isset($_POST['Submit'])){
         $fullName = $_POST['Full_name'];
         $email = $_POST['Email'];
@@ -30,30 +29,28 @@ if (empty($_SESSION)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
  
    <header>
-    <h1>Dashboard</h1>
-    <h2>Bienvenu Admin !</h2>
-   </header>
+    <a class="links" href="list_clients.php"> <-Back </a>
+    <h1>Edit Client</h1>
+    <a class="logout-btn" href="logout.php">Logout</a>
+    </header>
 <section class="both-bar">
 <nav class="side-bar">
-    <a class="links" href="dashboard.php">Dashboard</a>
-    <a class="links"  href="list_clients.php">Customer</a>
-    <a class="links"  href="list_accounts.php">Accounts</a>
-    <a class="links"  href="list_transactions.php">Today's Transactions</a>
-    <button class="logout-btn">Logout</button>
+    
 </nav>
 <div  class="bg">
+    
     <form action="edit_client.php?id= <?php echo $customer_id ?>" method="post" >
-    <label>Full_name</label>
-    <input type="text" name="Full_name" value = "<?php echo "{$inf['full_name']}" ?>">
-    <label>Email</label>
-    <input type="email" name="Email"value = "<?php echo "{$inf['email']}" ?>">
-    <label>Phone</label>
-    <input type="text" name="Phone" value = "<?php echo "{$inf['phone']}" ?>">
+    <div class="in"><label>Full_name</label>
+    <input type="text" name="Full_name" value = "<?php echo "{$inf['full_name']}" ?>"></div>
+    <div class="in"><label>Email</label>
+    <input type="email" name="Email"value = "<?php echo "{$inf['email']}" ?>"></div>
+    <div class="in"><label>Phone</label>
+    <input type="text" name="Phone" value = "<?php echo "{$inf['phone']}" ?>"></div>
     <input type="submit" value="submit" name="Submit">
 </form>
 </div>

@@ -21,7 +21,7 @@ if (empty($_SESSION)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="dashs.css">
+    <link rel="stylesheet" href="dash.css">
 </head>
 <body>
  
@@ -35,12 +35,13 @@ if (empty($_SESSION)){
     <a class="links"  href="list_clients.php">Customer</a>
     <a class="links"  href="list_accounts.php">Accounts</a>
     <a class="links"  href="list_transactions.php">Today's Transactions</a>
-    <button class="logout-btn">Logout</button>
+    <a class="logout-btn" href="logout.php">Logout</a>
 </nav>
 <div  class="bg">
+    <a href="add_clients.php">Add Customer</a>
     <?php 
         foreach($customer_amount as $cusAm){
-            echo  "<p class = 'customer'>" . $cusAm['customer_id'] . " - ". $cusAm['full_name'] . " - ". $cusAm['email'] . " - ". $cusAm['phone'] . "</p>";
+            echo  "<p class = 'customer'>" . $cusAm['customer_id'] . " - ". $cusAm['full_name'] . " - ". $cusAm['email'] . " - ". $cusAm['phone'] . "<a href='edit_client.php?id=" . $cusAm['customer_id'] . "'>Edit</a>" . "</p>";
         }
     ?>
 </div>

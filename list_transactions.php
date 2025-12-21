@@ -21,7 +21,7 @@ if (empty($_SESSION)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="dashs.css">
+    <link rel="stylesheet" href="dash.css">
 </head>
 <body>
  
@@ -35,12 +35,13 @@ if (empty($_SESSION)){
     <a class="links"  href="list_clients.php">Customers</a>
     <a class="links"  href="list_accounts.php">Accounts</a>
     <a class="links"  href="list_transactions.php">Today's Transactions</a>
-    <button class="logout-btn">Logout</button>
+    <a class="logout-btn" href="logout.php">Logout</a>
 </nav>
 <div  class="bg">
+    <a href="make_transaction.php">make a transaction</a>
      <?php 
         foreach($transaction_amount as $trans){
-            echo  "<p class = 'customer'>" . $trans['account_id'] . " - ". $trans['amount'] . " - ". $trans['transaction_type'] . " - ". $trans['transaction_date'] . "</p>";
+            echo  "<p class = 'customer'>" . $trans['transaction_id'] . " - ". $trans['amount'] . " - ". $trans['transaction_type'] . " - ". $trans['transaction_date'] . "</p>";
         }
     ?>
 </div>

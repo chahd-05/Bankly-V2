@@ -24,34 +24,33 @@ if (empty($_SESSION)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href=".css">
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
  
    <header>
-    <h1>Dashboard</h1>
-    <h2>Bienvenu Admin !</h2>
+    <a class="links" href="list_clients.php"> <-Back </a>
+    <h1>add Client</h1>
+    <a class="logout-btn" href="logout.php">Logout</a>
    </header>
 <section class="both-bar">
 <nav class="side-bar">
-    <a class="links" href="dashboard.php">Dashboard</a>
-    <a class="links"  href="list_clients.php">Customers</a>
-    <a class="links"  href="list_accounts.php">Accounts</a>
-    <a class="links"  href="list_transactions.php">Today's Transactions</a>
-    <button class="logout-btn">Logout</button>
+    
 </nav>
-
-<form action="add_clients.php" method="post">
-    <label>Full_name</label>
-    <input type="text" name="Full_name">
-    <label>Email</label>
-    <input type="email" name="Email">
-    <label>Phone</label>
-    <input type="text" name="Phone">
+<div  class="bg">
+    <form action="add_clients.php" method="post">
+    <div class="in"><label>Full_name</label>
+    <input type="text" name="Full_name"></div>
+    <div class="in"><label>Email</label>
+    <input type="email" name="Email"></div>
+    <div class="in"><label>Phone</label>
+    <input type="text" name="Phone"></div>
+    
+    
+    
     <input type="submit" value="submit" name="Submit">
 </form>
-
-<div  class="bg"></div>
+</div>
 </section>
 
 </body>
