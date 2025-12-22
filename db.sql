@@ -30,7 +30,7 @@ use bankly;
      transaction_type enum ('debit', 'credit'),
      transaction_date datetime default current_timestamp,
      account_id int,
-     foreign key (account_id) references accounts (account_id)
+     foreign key (account_id) references accounts (account_id) ON DELETE CASCADE
      );
 
 
